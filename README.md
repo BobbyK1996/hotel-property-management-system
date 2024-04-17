@@ -1,6 +1,6 @@
 # React Hotel Property Management System
 
-This is a Hotel PMS for a small, boutique Bed & Breakfast with several cabins.
+This is a Hotel PMS for a small, boutique Bed & Breakfast with several cabins. Since this is in an internal tool, it will be designed as a SPA.
 
 ## The general requirements are:
 
@@ -14,7 +14,7 @@ This is a Hotel PMS for a small, boutique Bed & Breakfast with several cabins.
 ### Authentication
 
 - Users of the app are hotel employees. They need to be logged into the application to perform tasks.
-- New users can only be signed up within applications, meaning there will be no client side registering.
+- New users can only be signed up within applications.
 - Users should be able to upload an avatar and edit their name and password
 
 ### Cabins
@@ -50,3 +50,22 @@ This is a Hotel PMS for a small, boutique Bed & Breakfast with several cabins.
 
 - Users will be able to define application-wide settings, such as breakfast price, min and max nights, max guests, etc.
 - App will include a dark mode, because we're civilised people.
+
+## Planned pages:
+
+1. Dashboard => /dashboard
+2. Bookings => /bookings
+3. Cabins => /cabins
+4. Booking check on => /checkin/:bookingID
+5. App settings => /settings
+6. User sign up => /users
+7. Login => /login (default homepage if user has not signed in)
+8. Account settings => /account
+
+## Tech stack:
+
+- Routing => React Router
+- Styling => Styled components
+- Remote state management => React Query
+- UI state management => Context API
+- Form management => React Hook Form
