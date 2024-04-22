@@ -23,15 +23,21 @@ const Input = styled.input`
   padding: 0.8rem 1.2rem;
 `;
 
+const StyledApp = styled.main`
+  background-color: green;
+  padding: 20px;
+`;
+
 function App() {
   return (
-    <div>
+    <StyledApp>
       <H1>River&apos;s Edge Retreat</H1>
       <Button onClick={() => alert('Check in')}>Check in</Button>
       <Button onClick={() => alert('Check out')}>Check out</Button>
 
       <Input type="number" placeholder="Number of guests" />
-    </div>
+      <Input type="number" placeholder="Number of guests" />
+    </StyledApp>
   );
 }
 
