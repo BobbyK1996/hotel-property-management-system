@@ -36,6 +36,11 @@ function CabinTable() {
     error,
   } = useQuery({ queryKey: ['cabin'], queryFn: getCabins });
 
+  if (error) {
+    console.error(error);
+    throw new Error('Error loading table');
+  }
+
   if (isLoading) return <Spinner />;
 
   return (
