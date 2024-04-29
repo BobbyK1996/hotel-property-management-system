@@ -55,7 +55,7 @@ function MainNav() {
     <nav>
       <NavList>
         <li>
-          <StyledNavLink to="/dashboard" dataslot={undefined}>
+          <StyledNavLink to="/dashboard">
             <TfiHome />
             <span>Home</span>
           </StyledNavLink>
