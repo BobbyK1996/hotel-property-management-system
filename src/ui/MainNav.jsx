@@ -1,5 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { TfiHome } from 'react-icons/tfi';
+import { IoCalendarOutline } from 'react-icons/io5';
+import { MdOutlineVilla } from 'react-icons/md';
+import { PiUsersDuotone } from 'react-icons/pi';
+import { CiSettings } from 'react-icons/ci';
 
 const NavList = styled.ul`
   display: flex;
@@ -29,6 +34,20 @@ const StyledNavLink = styled(NavLink)`
     background-color: var(--color-grey-50);
     border-radius: var(--border-radius-sm);
   }
+
+  & svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    color: var(--color-grey-400);
+    transition: all 0.3s;
+  }
+
+  &:hover svg,
+  &:active svg,
+  &.active:link svg,
+  &.active:visited svg {
+    color: var(--color-brand-600);
+  }
 `;
 
 function MainNav() {
@@ -36,10 +55,34 @@ function MainNav() {
     <nav>
       <NavList>
         <li>
-          <StyledNavLink to="/dashboard">Home</StyledNavLink>
+          <StyledNavLink to="/dashboard" dataslot={undefined}>
+            <TfiHome />
+            <span>Home</span>
+          </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to="/bookings">Bookings</StyledNavLink>
+          <StyledNavLink to="/bookings">
+            <IoCalendarOutline />
+            <span>Bookings</span>
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink to="/cabins">
+            <MdOutlineVilla />
+            <span>Cabins</span>
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink to="/users">
+            <PiUsersDuotone />
+            <span>Users</span>
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink to="/settings">
+            <CiSettings />
+            <span>Settings</span>
+          </StyledNavLink>
         </li>
       </NavList>
     </nav>
