@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Form from '../../ui/Form';
 import Input from '../../ui/Input';
 import Button from '../../ui/Button';
+import Textarea from '../../ui/Textarea';
 
 const FormRow = styled.div`
   display: grid;
@@ -60,7 +61,7 @@ function CreateCabinForm() {
 
       <FormRow>
         <Label htmlFor="description">Description for website</Label>
-        <Input type="text" id="description" defaultValue="" />
+        <Textarea type="number" id="description" defaultValue="" />
       </FormRow>
 
       <FormRow>
