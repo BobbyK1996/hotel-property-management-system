@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const FileInput = styled.input`
-  min-width: 22.8rem;
+  min-width: 20.2rem;
   font-size: 1.4rem;
   border-radius: var(--border-radius-sm);
 
