@@ -11,7 +11,7 @@ export async function getSettings() {
   return data;
 }
 
-export async function updateSettings(newSetting) {
+export async function updateSetting(newSetting) {
   //All settings are on one row only with an Id of 1, hence we only need to update Id=1
   const { data, error } = await supabase
     .from('settings')
