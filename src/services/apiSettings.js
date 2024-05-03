@@ -17,7 +17,7 @@ export async function updateSettings(newSetting) {
     .from('settings')
     .update(newSetting)
     .eq('id', 1)
-    .select()
+    .select('*')
     .single();
 
   if (error) {
