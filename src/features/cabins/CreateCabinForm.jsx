@@ -1,4 +1,3 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useForm } from 'react-hook-form';
 
 import Form from '../../ui/Form';
@@ -29,7 +28,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
 
     if (isEditSession)
       editCabin({ newCabinData: { ...data, image }, id: editId });
-    else createCabin({ ...data, image }, { onSuccess: (data) => reset() });
+    else createCabin({ ...data, image }, { onSuccess: () => reset() });
   }
 
   function onError(errors) {
