@@ -1,4 +1,6 @@
+import { createPortal } from 'react-dom';
 import { IoMdClose } from 'react-icons/io';
+
 import styled from 'styled-components';
 
 const StyledModal = styled.div`
@@ -52,7 +54,7 @@ function Modal({ children, onClose }) {
     event.stopPropagation();
   };
 
-  return (
+  return createPortal(
     <Overlay onClick={onClose}>
       <StyledModal>
         <Button>
@@ -60,7 +62,8 @@ function Modal({ children, onClose }) {
         </Button>
         <div onClick={stopPropagation}>{children}</div>
       </StyledModal>
-    </Overlay>
+    </Overlay>,
+    document.body
   );
 }
 
