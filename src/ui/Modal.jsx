@@ -1,4 +1,4 @@
-import { cloneElement, createContext, useContext, useState } from 'react';
+import { createContext, createElement, useContext, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { IoMdClose } from 'react-icons/io';
 
@@ -68,7 +68,10 @@ function Modal({ children }) {
 function Open({ children, opens: opensWindowName }) {
   const { open } = useContext(ModalContext);
 
-  return cloneElement(children, { onClick: () => open(opensWindowName) });
+  return createElement(children.type, {
+    ...children.props,
+    onClick: () => open(opensWindowName),
+  });
 }
 
 function Window({ children, name }) {
@@ -86,7 +89,10 @@ function Window({ children, name }) {
           <IoMdClose />
         </Button>
         <div onClick={stopPropagation}>
-          {cloneElement(children, { onCloseModal: close })}
+          {createElement(children.type, {
+            ...children.props,
+            onCloseModal: close,
+          })}
         </div>
       </StyledModal>
     </Overlay>,
