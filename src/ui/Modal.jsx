@@ -94,9 +94,9 @@ function Window({ children, name }) {
         }
       }
 
-      document.addEventListener('click', handleClick);
+      document.addEventListener('click', handleClick, true);
 
-      return () => document.removeEventListener('click', handleClick);
+      return () => document.removeEventListener('click', handleClick, true);
     },
     [close]
   );
