@@ -1,4 +1,11 @@
-import { createContext, createElement, useContext, useState } from 'react';
+import {
+  createContext,
+  createElement,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { createPortal } from 'react-dom';
 import { IoMdClose } from 'react-icons/io';
 
@@ -76,19 +83,33 @@ function Open({ children, opens: opensWindowName }) {
 
 function Window({ children, name }) {
   const { openName, close } = useContext(ModalContext);
+  const ref = useRef();
+
+  useEffect(
+    function () {
+      function handleClick(e) {
+        if (ref.current && !ref.current.contains(e.target)) {
+          console.log('click outside');
+          close();
+        }
+      }
+
+      document.addEventListener('click', handleClick);
+
+      return () => document.removeEventListener('click', handleClick);
+    },
+    [close]
+  );
+
   if (name !== openName) return null;
 
-  const stopPropagation = (event) => {
-    event.stopPropagation();
-  };
-
   return createPortal(
-    <Overlay onClick={close}>
-      <StyledModal>
+    <Overlay>
+      <StyledModal ref={ref}>
         <Button onClick={close}>
           <IoMdClose />
         </Button>
-        <div onClick={stopPropagation}>
+        <div>
           {createElement(children.type, {
             ...children.props,
             onCloseModal: close,
