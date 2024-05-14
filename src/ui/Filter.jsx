@@ -39,7 +39,9 @@ function Filter({ filterField, options }) {
   const currentFilter = searchParams.get(filterField) || options.at(0).value;
 
   function handleClick(value) {
-    setSearchParams({ ...searchParams, [filterField]: value });
+    // setSearchParams({ ...searchParams, [filterField]: value });
+    searchParams.set(filterField, value);
+    setSearchParams(searchParams);
   }
 
   return (
