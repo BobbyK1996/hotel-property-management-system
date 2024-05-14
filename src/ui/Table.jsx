@@ -5,7 +5,7 @@ const StyledTable = styled.div`
   border: 1px solid var(--color-grey-200);
   font-size: 1.4rem;
   border-radius: 7px;
-  overflow: hidden;
+  /* overflow: hidden; */
 `;
 
 const CommonRow = styled.div`
