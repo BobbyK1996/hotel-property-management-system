@@ -17,7 +17,7 @@ This is a Hotel PMS for a small, boutique Bed & Breakfast with several cabins. S
 - New users can only be signed up within applications.
 - Users should be able to upload an avatar and edit their name and password
 
-### Cabins
+### Cabins - DONE
 
 - App needs a table view with all cabins, showing cabin photo, name, capacity, price, current discount, etc.
 - Users should be able to update or delete cabins, as well as create new ones with supplementary media.
@@ -46,7 +46,7 @@ This is a Hotel PMS for a small, boutique Bed & Breakfast with several cabins. S
   - Charts showing daily hotel sales, separated by total sales and extras. Current planned extras include breakfast, but can be expanded.
   - Charts showing statistics regarding stay duration.
 
-### User settings
+### User settings - DONE
 
 - Users will be able to define application-wide settings, such as breakfast price, min and max nights, max guests, etc.
 - App will include a dark mode, because we're civilised people.
