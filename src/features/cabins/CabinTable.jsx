@@ -23,14 +23,15 @@ function CabinTable() {
     filteredCabins = cabins.filter((cabin) => cabin.discount > 0);
 
   //sort
-  const sortBy = searchParams.get('sortBy') || 'startDate-asc';
+  const sortBy = searchParams.get('sortBy') || 'name-asc';
 
   const [field, direction] = sortBy.split('-');
   const modifier = direction === 'asc' ? 1 : -1;
-  const sortedCabins = filteredCabins.sort(
-    (a, b) => (a[field] - b[field]) * modifier
+  const sortedCabins = filteredCabins?.sort((a, b) =>
+    field === 'name'
+      ? a[field].localeCompare(b[field]) * modifier
+      : (a[field] - b[field]) * modifier
   );
-  console.log(sortedCabins, modifier);
 
   return (
     <Menus>
