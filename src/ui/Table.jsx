@@ -5,6 +5,8 @@ const StyledTable = styled.div`
   border: 1px solid var(--color-grey-200);
   font-size: 1.4rem;
   border-radius: 7px;
+  background-color: var(--color-grey-0);
+
   /* overflow: hidden; */
 `;
 
